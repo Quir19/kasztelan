@@ -1,36 +1,78 @@
-$primary-color: #0033cc;
-$secondary-color: #e6e6e6;
-$font-stack: 'Arial', sans-serif;
-
 body {
-    font-family: $font-stack;
-    background-color: $secondary-color;
+    font-family: Arial, sans-serif;
+    background-color: #e6e6e6;
     margin: 0;
     padding: 20px;
+    text-align: center;
 }
 
 h1 {
-    color: $primary-color;
-    text-align: center;
+    color: #0033cc;
 }
 
 figure {
     margin: 20px 0;
-    text-align: center;
+}
 
-    img {
-        border: 5px solid $primary-color;
-        border-radius: 10px;
-    }
+img {
+    border: 5px solid #0033cc;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+}
 
-    figcaption {
-        margin-top: 10px;
-        font-style: italic;
-        color: darken($primary-color, 20%);
-    }
+figcaption {
+    margin-top: 10px;
+    font-style: italic;
+    color: #002080;
 }
 
 p {
     line-height: 1.6;
-    color: darken($primary-color, 40%);
+    color: #001040;
+}
+
+/* Efekt fajerwerków */
+.fireworks {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.firework {
+    position: absolute;
+    bottom: 0;
+    width: 5px;
+    height: 5px;
+    background-color: transparent;
+    box-shadow: 0 0 5px 5px #ff0000;
+    animation: explode 1s ease-out infinite;
+}
+
+.firework:nth-child(2) {
+    left: 50%;
+    animation-delay: 0.5s;
+}
+
+.firework:nth-child(3) {
+    left: 75%;
+    animation-delay: 1s;
+}
+
+@keyframes explode {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-500px);
+        opacity: 0;
+    }
 }
