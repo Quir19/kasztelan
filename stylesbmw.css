@@ -1,0 +1,36 @@
+$primary-color: #0033cc;
+$secondary-color: #e6e6e6;
+$font-stack: 'Arial', sans-serif;
+
+body {
+    font-family: $font-stack;
+    background-color: $secondary-color;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: $primary-color;
+    text-align: center;
+}
+
+figure {
+    margin: 20px 0;
+    text-align: center;
+
+    img {
+        border: 5px solid $primary-color;
+        border-radius: 10px;
+    }
+
+    figcaption {
+        margin-top: 10px;
+        font-style: italic;
+        color: darken($primary-color, 20%);
+    }
+}
+
+p {
+    line-height: 1.6;
+    color: darken($primary-color, 40%);
+}
